@@ -1,18 +1,15 @@
 ﻿using MongoDB.Driver;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace VMongo
 {
-    public class RepositoryContext
+    public class VMongoContext
     {
         private readonly MongoClient _mongoClient;
         public readonly IMongoDatabase MongoDatabase;
 
-        public RepositoryContext(string connectionString, string dataBase)
+        public VMongoContext(string connectionString, string dataBase)
         {
             _mongoClient = new MongoClient(connectionString);
             MongoDatabase = _mongoClient.GetDatabase(dataBase);
